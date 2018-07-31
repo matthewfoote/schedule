@@ -7,11 +7,19 @@ import ProgressTracker from './progressTracker';
 
 class Schedule extends Component {
     
+    constructor(props) {
+        super(props);
+        
+        this.amountEnrolled = 0;
+    }
+    
     renderCourses() {
     const data = this.props.courses;
+    this.amountEnrolled = 0;
         
     return data.map((course, index) => {
-        if(course.enrolled) {
+        if(course.enrolled && this.amountEnrolled != 5) {
+            this.amountEnrolled++;
             return <ScheduleCourse {...course} key={index}/>
         }
     })
@@ -19,11 +27,12 @@ class Schedule extends Component {
  }
     
     render () {
+        this.amountEnrolled;
         return (
                 <div className="schedule">
                     <h1 className="schedule__title">My Schedule</h1>
                     {this.renderCourses() }
-                    <ProgressTracker/>
+                    <ProgressTracker amountPossible={5} amountEnrolled={this.amountEnrolled}/>
                     <Gradient/>
                 </div>
             );
