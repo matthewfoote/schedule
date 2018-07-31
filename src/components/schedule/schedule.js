@@ -8,7 +8,7 @@ import ProgressTracker from './progressTracker';
 class Schedule extends Component {
     
     renderCourses() {
-    const data = this.props.courses
+    const data = this.props.courses;
         
     return data.map((course, index) => {
         if(course.enrolled) {
@@ -36,4 +36,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default Schedule;
+export default connect(mapStateToProps)(Schedule);
