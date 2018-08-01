@@ -1,11 +1,11 @@
 .library-course {
     display: grid;
     grid-template-columns: repeat(auto-fit, 1fr);
-    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-rows: 80px 1fr;
     
     &__title-check {
         grid-row: 1/2;
-        dislay: flex;
+        display: flex;
         grid-column: 1/2;
     }
     &__line {
@@ -32,18 +32,20 @@
     
     &:hover {
     background: white;
-    box-shadow: 0px 10px 0 rgba(0, 0, 0, .21);
+    box-shadow: 6px 8px 0 rgba(0, 0, 0, .21);
     }
     
     &__title {
         color: $color-gray;
-        font-family:$font-lato;
+        font-family: $font-lato;
         font-size: 18px;
         line-height: 22px;
 
     }
     &__line {
         border-bottom: 1px solid #F2F2F2;
+        margin-top: 19px;
+        margin-bottom: 24px;
     }
     &__icon {
         color: $color-blue;
@@ -65,5 +67,8 @@
 
     }
     
+    &__action {
+        z-index: 1;
+    }
 
 }
