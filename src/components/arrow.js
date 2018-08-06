@@ -25,7 +25,7 @@ class Arrow extends Component {
     render() {
         this.id = `arrow ${this.props.id}`
         return (
-        <a id={this.id} onClick={() => this.toggleArrow}className={`arrow ${this.props.className}`}></a>
+        <a id={this.id} onClick={() => this.toggleArrow} className={`arrow ${this.props.className}`}></a>
         )
     }
 }
